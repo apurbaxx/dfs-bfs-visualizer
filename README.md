@@ -36,9 +36,9 @@ python graph_visualizer.py
 3. **Enter starting node** (default sample graph has nodes 0-7)
 
 4. **Watch the Visualization:**
-   - Red nodes show the current node being explored
-   - Green nodes show already visited nodes
-   - Blue nodes show unvisited nodes
+   - 🔴Red nodes show the current node being explored
+   - 🟢Green nodes show already visited nodes
+   - 🔵Blue nodes show unvisited nodes
 
 ## How It Works
 

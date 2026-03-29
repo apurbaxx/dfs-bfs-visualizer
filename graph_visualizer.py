@@ -26,10 +26,13 @@ class GraphVisualizer:
         for u, v in edges:
             self.add_edge(u, v)
     
-    def display_graph_structure(self):
+    def display_graph_structure(self, is_custom=False):
         """Display the graph structure in terminal"""
         print("\n" + "="*50)
-        print(" SAMPLE GRAPH STRUCTURE ".center(50))
+        if is_custom:
+            print(" CUSTOM GRAPH STRUCTURE ".center(50))
+        else:
+            print(" SAMPLE GRAPH STRUCTURE ".center(50))
         print("="*50)
         print("""
         0
@@ -186,7 +189,7 @@ def main():
             
             if visualizer.graph:
                 print("\n✓ Custom graph created!")
-                visualizer.display_graph_structure()
+                visualizer.display_graph_structure(is_custom=True)
                 break
             else:
                 print("\n✗ No graph created! Try again.")
