@@ -26,6 +26,27 @@ class GraphVisualizer:
         for u, v in edges:
             self.add_edge(u, v)
     
+    def display_graph_structure(self):
+        """Display the graph structure in terminal"""
+        print("\n" + "="*50)
+        print(" SAMPLE GRAPH STRUCTURE ".center(50))
+        print("="*50)
+        print("""
+        0
+       / \\
+      1   2
+     / \\ / \\
+    3  4 5  6
+     \\ /
+      7
+        """)
+        print("="*50)
+        print("\nGraph Connections:")
+        for node in sorted(self.graph.keys()):
+            neighbors = sorted(self.graph[node])
+            print(f"  Node {node} → {neighbors}")
+        print("="*50)
+    
     def draw_graph(self, visited=None, current=None, title="Graph"):
         """Draw the graph with highlighted nodes"""
         plt.clf()
@@ -129,44 +150,8 @@ def main():
     print("="*50)
     
     visualizer = GraphVisualizer()
-    
-    while True:
-        print("\nOptions:")
-        print("1. Use sample graph")
-        print("2. Create custom graph")
-        print("3. Exit")
-        
-        choice = input("\nEnter your choice (1-3): ").strip()
-        
-        if choice == '1':
-            visualizer.create_sample_graph()
-            print("\n✓ Sample graph created!")
-            break
-        elif choice == '2':
-            print("\nEnter edges (format: u v). Type 'done' when finished.")
-            print("Example: 0 1")
-            visualizer.graph = {}
-            while True:
-                edge = input("Edge: ").strip()
-                if edge.lower() == 'done':
-                    break
-                try:
-                    u, v = map(int, edge.split())
-                    visualizer.add_edge(u, v)
-                    print(f"Added edge {u} - {v}")
-                except:
-                    print("Invalid input! Use format: u v")
-            
-            if visualizer.graph:
-                print("\nCustom graph created!")
-                break
-            else:
-                print("No graph created!")
-        elif choice == '3':
-            print("\nGoodbye!")
-            return
-        else:
-            print("Invalid choice!")
+    visualizer.create_sample_graph()
+    visualizer.display_graph_structure()
     
     # Choose algorithm
     while True:
@@ -183,7 +168,8 @@ def main():
             start_node = int(input("Enter start node: ").strip())
             
             if start_node not in visualizer.graph:
-                print(f"Node {start_node} not in graph!")
+                print(f"✗ Node {start_node} not in graph!")
+                print(f"Available nodes: {sorted(visualizer.graph.keys())}")
                 continue
             
             if algo_choice == '1':
@@ -195,10 +181,10 @@ def main():
                 visualizer.pos = None  # Reset position for DFS
                 visualizer.dfs(start_node)
         elif algo_choice == '4':
-            print("\nGoodbye!")
+            print("\nGoodbye! 👋")
             break
         else:
-            print("Invalid choice!")
+            print("✗ Invalid choice!")
 
 
 if __name__ == "__main__":
