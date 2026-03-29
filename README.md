@@ -87,11 +87,5 @@ algorithm visualiser/
     └── graph_visualiser.png
 ```
 
-## Author
 
-Created for VIT SEM-2 CSA-2001 Fundamentals in AI and ML
-
-## License
-
-Free to use for educational purposes
 
