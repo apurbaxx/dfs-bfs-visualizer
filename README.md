@@ -2,6 +2,14 @@
 
 A simple Python-based visualizer for BFS (Breadth-First Search) and DFS (Depth-First Search) algorithms.
 
+## Screenshots
+
+### Terminal Interface
+![Terminal UI](screenshots/terminal%20ui.png)
+
+### Graph Visualization
+![Graph Visualizer](screenshots/graph_visualiser.png)
+
 ## Features
 
 - Visual representation of graph traversal
@@ -72,5 +80,18 @@ Available nodes: 0, 1, 2, 3, 4, 5, 6, 7
 algorithm visualiser/
 ├── graph_visualizer.py  # Main program
 ├── README.md           # Documentation
+├── GUIDE.md           # Usage examples
+├── requirements.txt    # Python dependencies
+└── screenshots/       # Project screenshots
+    ├── terminal ui.png
+    └── graph_visualiser.png
 ```
+
+## Author
+
+Created for VIT SEM-2 CSA-2001 Fundamentals in AI and ML
+
+## License
+
+Free to use for educational purposes
 
