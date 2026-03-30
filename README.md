@@ -80,7 +80,6 @@ Available nodes: 0, 1, 2, 3, 4, 5, 6, 7
 algorithm visualiser/
 ├── graph_visualizer.py  # Main program
 ├── README.md           # Documentation
-├── GUIDE.md           # Usage examples
 ├── requirements.txt    # Python dependencies
 └── screenshots/       # Project screenshots
     ├── terminal ui.png
